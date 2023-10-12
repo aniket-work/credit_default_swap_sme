@@ -54,52 +54,58 @@ Before we get started, make sure you have the following prerequisites in place:
     ```markdown
         ├── data
         │   └── cds_survey_final.pdf
-        ├── document_processing.py
-        ├── document_storage.py
+        ├── document_query_processing.py
+        ├── document_query_storage.py
         ├── embedding_retrieval.py
         ├── main.py
     ```
 
-Step 1: Install Dependencies 🛠️
-You can install the required Python dependencies by running the following command:
+# Step 1: Install Dependencies
 
-    ```bash
-    pip install haystack sentence-transformers
-    ```
+You can install the required Python dependencies by running:
 
-Step 2: Run the Ingestion Flow 🚀
-Convert PDF to Text 📄: Our first step is to convert the PDF document to text. This is crucial for the subsequent processes.
+```bash
+pip install haystack sentence-transformers
+```
 
-Set Up Document Storage 🗂️: Next, we'll set up the Weaviate document store. This is where we store our documents and their embeddings.
+# Step 2: Run the Ingestion Flow
 
-Initialize the Retrieval Component 🔄: In the retrieval.py module, we'll initialize the EmbeddingRetriever, which retrieves documents based on their embeddings.
+### Convert PDF to Text
+Our first step is to convert the PDF document to text. This is crucial for subsequent processes.
 
-Set Up the Model 🤖: In the model.py module, we'll set up the PromptModel, allowing us to answer questions based on the provided documents.
+### Set Up Document Storage  
+Next, we'll set up the Weaviate document store. This is where we store documents and their embeddings.
 
-Configure the Query Pipeline 📊: We'll use the query.py module to configure the query pipeline, connecting the retriever and the model. This pipeline handles document retrieval and question answering.
+### Initialize the Retrieval Component 
+In `retrieval.py`, we'll initialize the `EmbeddingRetriever`, which retrieves documents based on embeddings.
 
-Step 3: Run the Main Script 📜
-Now it's time to execute the main.py script, which orchestrates the entire query flow. It does the following:
+### Set Up the Model
+In `model.py`, we'll set up the `PromptModel`, allowing us to answer questions based on the documents.
 
-Receives your question.
-    - Converts the PDF document to text.
-    - Sets up the Weaviate document store.
-    - Initializes the EmbeddingRetriever.
-    - Initializes the PromptModel.
-    - Configures the query pipeline.
-    - Executes the query pipeline for answering your question.
-    - Logs the answer.
-    - Use the following command to run the main script:
+### Configure the Query Pipeline
+We'll use `query.py` to configure the query pipeline, connecting the retriever and model. This pipeline handles retrieval and QA.
 
-    ```bash
-    python main.py
-    ```
+# Step 3: Run the Main Script
+Now execute `main.py` which orchestrates the entire query flow:
 
-Step 4: Check the Answer ✔️
-After running the script, you'll receive the answer to your question, along with the relevant documents that support the answer.
+- Receives question  
+- Converts PDF to text
+- Sets up Weaviate store
+- Initializes `EmbeddingRetriever`
+- Initializes `PromptModel` 
+- Configures query pipeline
+- Executes pipeline to answer question
+- Logs the answer
 
-And that's it! You've successfully set up and executed the CDS query flow. 🎉 You can now ask questions and receive detailed answers based on the provided documents.
+Run with:
 
+```bash
+python main.py
+```
 
-Happy querying! 🚀
+# Step 4: Check the Answer 
+After running, you'll get the answer and relevant docs.  
 
+You've now set up the CDS query flow! 🎉 Ask questions and get detailed answers.
+
+Happy querying!
