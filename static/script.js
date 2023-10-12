@@ -37,8 +37,8 @@ async function processAnswerResponse(response){
         case 400:  
             Swal.fire({
                 icon: 'error',
-                title: 'Oops!!!',
-                text: "Sorry, Couldn't be able to generate your response now. Please try after some time.",
+                title: 'ERROR',
+                text: "Encountered an internal error",
                 confirmButtonColor: "#040b14"
             })
         break;
@@ -51,8 +51,8 @@ async function processAnswerResponse(response){
         default:
             Swal.fire({
                 icon: 'error',
-                title: 'Oops!!!',
-                text: "There is a "+response.status+" error. Please contact admin for support.",
+                title: 'ERROR',
+                text: "There is a "+response.status+" error.",
                 confirmButtonColor: "#040b14"
             })
     }
