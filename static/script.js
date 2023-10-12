@@ -12,7 +12,7 @@ $(document).ready(function () {
         if (question == null || question == "") {
             Swal.fire({
                 icon: 'error',
-                title: 'Oops!!!',
+                title: 'Query Required',
                 text: "Please enter your query!",
                 allowOutsideClick: false,
                 allowEscapeKey: false,
